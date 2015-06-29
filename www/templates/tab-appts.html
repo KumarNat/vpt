@@ -1,0 +1,17 @@
+<ion-view view-title="Appts">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="appt in appts" type="item-text-wrap" href="#/tab/appts/{{appt.id}}">
+        <h2>{{appt.dateformatted}} @ {{appt.timeformatted}}</h2>
+        <p>{{ appt.therapistName}} (Map It)</p>
+		<p>{{ appt.status}} </p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(appt)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+<!-- appointment details: status, date, time, dateformatted, timeFormatted, location/venue/place, therapistId, therapistName, emrId, clinicId -->
