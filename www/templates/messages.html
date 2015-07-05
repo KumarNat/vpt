@@ -1,0 +1,22 @@
+<ion-view view-title="Messages">
+	
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="message in messages" href="#/app/messages/{{message.id}}">  
+
+		<div class="item-icon-left">	  
+			<i class="icon icon-accessory" ng-class="isRead(message)? 'ion-home' : ''"></i>
+			<h2 style='text-align:left;'>{{message.title}}</h2>
+			<h3>{{message.date}}  {{message.time}}</h3>
+			<p>{{ message.body}}</p>
+		</div>
+		<div class="item-icon-right">	  
+			<i class="icon" ng-class="hasAttach(message)? 'ion-paperclip' : ''"></i>
+		</div>
+		<ion-option-button class="button-assertive" ng-click="remove(walkin)">
+          Delete
+		</ion-option-button>
+      </ion-item>
+    </ion-list>  
+ </ion-content>
+</ion-view>

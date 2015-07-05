@@ -1,0 +1,22 @@
+<ion-view view-title="Appointments">
+  <ion-content>
+    <ion-card>
+      <ion-item ng-repeat="appointment in appointments"  href="#/app/appointments/{{appointment.id}}">
+       
+  		<h2>{{appointment.title}}</h2>
+  		<h3>{{appointment.date}}  {{appointment.time}}</h3>
+        <p>{{ appointment.therapist}}</p>
+		<p>{{ appointment.status}} </p>
+		<div class="button-bar">
+			<button class="button button-clear  button-block" ng-class="isConfirmed(appointment)? 'ion-checkmark-round' : 'ion-close-round'" ng-click="toggle(appointment)"></button>
+			<button class="button button-clear  button-block ion-compose"></button>
+			<button class="button button-clear  button-block ion-calendar"></button>
+			<button class="button button-clear  button-block ion-pin"></button>		
+		</div>    
+       <ion-option-button class="button-assertive" ng-click="remove(appointment)">
+          Delete
+       </ion-option-button>
+      </ion-item>
+    </ion-card>
+  </ion-content>
+</ion-view>

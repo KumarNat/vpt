@@ -1,0 +1,21 @@
+<ion-view view-title="Walkins">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="walkin in walkins" href="#/app/walkins/{{walkin.id}}">
+       
+		<div style='width:100%; height:100%; text-align:center; clear:both;'>
+       <div style='width:70%;  text-align:left; float:left;'>
+  		<h2>{{walkin.title}}</h2>
+  		<h3>{{walkin.date}}  {{walkin.time}}</h3>
+        <p>{{ walkin.therapist}}</p>
+        </div>
+        <i class="icon ion-pin icon-accessory" style='width:15%; float:left;'></i>		
+		<i class="icon icon-accessory" ng-class="isConfirmed(walkin)? 'ion-checkmark-round' : 'ion-close-round'" style='width:15%; float:left;' ng-click="toggle(walkin)"></i>
+		</div>       
+       <ion-option-button class="button-assertive" ng-click="remove(walkin)">
+          Delete
+       </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
